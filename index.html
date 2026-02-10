@@ -1,54 +1,61 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8">
+    <title>Student Profile Form</title>
 </head>
-
 <body>
-  <form>
-        <h2>Getting Value From Radio Buttons</h2>
-          <input name="gender" value="male"> Male<br>
-          <input name="gender" value="female"> Female<br>
-          <input name="gender" value="other"> Other
-        </form>
-         <input  id="btn" value="Click Me!">
-        <br>
-        <h2>Setting radio button to 'checked' - other way to do it</h2>
-        <input type="radio" name="gender" value="male" id="r3"> Male
-        <input type="radio" name="gender" value="male" id="r2"> Female
-        <br>
-        <br>
-        <h2>Checkboxes:</h2>
-        <h3>How do you take your coffee?</h3>
-        <form id="coffee">
-            <input name="coffee" value="cream">With cream<br>
-            <input name="coffee" value="sugar">With sugar<br>
-            <br>
-            <input type="button" onclick="myFunction()" value="Send order">
-            <br><br>
-            <p id="order"></p>
-        <br>
-            Enter a date before 1980-01-01:
-            <input id="date1" name="bday" max="1979-12-31"><br>
-      
-            <p id="dateTarget1"></p>
-            <button onclick="dateFunction1()">Start Date</button>
-            <br>
-            <br>
-            
-            Enter a date after 2000-01-01:
-            <input id="date2" name="bday" min="2000-01-02"><br>
-            
-            
-            
-            <p id="dateTarget2"></p>
-            <button onclick="dateFunction2()">End Date</button>
-        </form>
-  <script src="script.js"></script>
-</body>
 
+    <h1>Student Profile</h1>
+
+    <form>
+        <!-- Step 1-->
+        Your Name:
+        <input type="text">
+        <br><br>
+
+        <!-- Grade Level -->
+        <p>Grade Level:</p>
+        <input name="grade" value="Freshman">
+        Freshman
+      <br>
+
+        <input name="grade" value="Sophomore">
+       Sophomore
+      <br>
+
+        <input name="grade" value="Junior">
+        Junior
+      <br>
+
+        <input name="grade" value="Senior">
+        Senior
+      <br><br>
+
+        <!-- Interests -->
+        <p>Interests:</p>
+        <input value="Sports">
+        Sports
+      <br>
+
+        <input  value="Music">
+        Music
+      <br>
+
+        <input value="Coding">
+        Coding
+      <br><br>
+
+        <!-- Birthday -->
+        <label for="birthday">Birthday:</label>
+        <input type="date" id="birthday">
+        <br><br>
+
+        <button type="button" onclick="showProfile()">Submit</button>
+    </form>
+
+    <p id="output"></p>
+
+    <script src="script.js"></script>
+</body>
 </html>

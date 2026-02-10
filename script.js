@@ -1,42 +1,41 @@
-//Getting Value From Radio Button
-document.getElementById('btn').addEventListener('click', function() {
-  var formInput = document.getElementById("numberForm");
-  //Code here for step 5
-  
-  alert();
-});
-//Pre-setting Radio Button Value
-function check() {
-    //document.getElementById("r2").CODE HERE = true;
-}
-
-function uncheck() {
-    //document.getElementById("r2").CODE HERE = false;
-}
-
-
-//Coffee
-function myFunction() {
-  var coffee = document.getElementById("coffee");
-  var txt = "";
-  var i;
-  for (i = 0; i < coffee.length; i++) {
-    if (coffee[i].checked) {
-      txt = txt + coffee[i].value + " ";
+function showProfile() {
+    const name = document.getElementById("name").value;
+    const birthday = document.getElementById("birthday").value;
+    
+    // Get selected grade
+    let grade = "";
+    const grades = document.getElementsByName("grade");
+    for (let i = 0; i < grades.length; i++) {
+        if (grades[i].checked) {
+            grade = grades[i].value;
+        }
     }
-  }
-  document.getElementById("order").innerHTML = "You ordered a coffee with: " + txt;
-}
-// Birthday
-function dateFunction1() {
-  var x = document.getElementById("date1").value;
-  console.log(x);
-  document.getElementById("dateTarget1").innerHTML = x;
+    
+    // Get interests
+    let interests = [];
+    if (document.getElementById("sports").checked) {
+        interests.push("Sports");
+    }
+    if (document.getElementById("music").checked) {
+        interests.push("Music");
+    }
+    if (document.getElementById("coding").checked) {
+        interests.push("Coding");
+    }
 
-}
+    // Build message
+    let message = "Hello " + name + "!<br>";
+    message += "You are a " + grade + ".<br>";
 
-function dateFunction2() {
-   var x = document.getElementById("date2").value;
-  console.log(x);
-  document.getElementById("dateTarget2").innerHTML = x;
+    if (interests.length > 0) {
+        message += "Your interests include: " + interests.join(", ") + ".<br>";
+    } else {
+        message += "You didn't select any interests.<br>";
+    }
+
+    if (birthday !== "") {
+        message += "Your birthday is " + birthday + ". 🎉";
+    }
+
+    document.getElementById("output").innerHTML = message;
 }

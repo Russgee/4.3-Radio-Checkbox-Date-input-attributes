@@ -41,9 +41,7 @@ Multiple checkboxes should be selectable at the same time.
 
 ## Step 4: Add a Date Input
 Inside the form:
-- Add a date input for the student’s birthday
-- Include a label so the user knows what the date represents
-- Give the input an ID
+- Add `type="checkbox"` for all the Interests inputs
 
 ---
 
